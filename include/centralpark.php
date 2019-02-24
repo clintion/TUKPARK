@@ -1,3 +1,23 @@
+<?php 
+
+
+if (isset($_POST['submit'])) {
+    $plateno =$_POST['plateno'];
+    $timein =$_POST['timein'];
+    $timeout =$_POST['timeout'];
+
+
+    $con = new mysqli('localhost','root','','eh');
+    if($con->connect_error){ 
+        die('connection_failed - '.$con->connect_error);
+    }else {
+        $con->query("INSERT INTO `eh`.`userbook` (`plateno`, `timein`, `timeout`, `createdat`, `updatedat`) VALUES ('$plateno', '$timein', '$timeout', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)");
+    }
+
+
+}
+?>
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>TuPark car parking TUK Central parking slot</title>
 <style>
@@ -720,24 +740,28 @@ padding-top:10px;
 
         <h5 class="mt-1 mb-2">BOOK SLOT </h5>
 
-        <div class="md-form ml-0 mr-0">
-          <input type="password" type="text" id="form29" class="form-control form-control-sm validate ml-0" required>
-          <label data-error="wrong" data-success="right" for="form29" class="ml-0">CAR NO. PLATE</label>
-        </div>
+        <div class="md-form">
+                <input type="text" id="materialRegisterFormPhone" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock" required name="plateno">
+                <label for="materialRegisterFormPhone">CAR NO. PLATE</label>
+            </div>
          <div class="md-form">
             TIME IN
-         <input placeholder="Time Out" type="time" id="input_starttime" class="input_starttime" required>
-         <label for="input_starttime"></label>
+         <input placeholder="Time Out" type="time" id="input_starttime" class="input_starttime" required name="timein">
+         <label for="timein"></label>
          </div>
          <div class="md-form">
             TIME OUT
-         <input placeholder="Time Out" type="time" id="input_starttime" class="input_starttime">
-         <label for="input_starttime"></label>
+         <input placeholder="Time Out" type="time" id="input_starttime" class="input_starttime" required name="timeout">
+         <label for="timeout"></label>
          </div>
 
-        <div class="text-center mt-4">
-          <button class="btn  mt-1" type="submit" style="background-color: #782F40 !important;">DONE <i class="fa fa-sign-in ml-1"></i></button>
+        <!-- <div class="text-center mt-4">
+          <button class="btn  mt-1" type="submit" style="background-color: #782F40 !important;">DONE <i class="fa fa-sign-in ml-1" name="submit" ></i></button>
         </div>
+ -->
+ <button class="btn " type="submit" style="background-color: #782F40 !important;" class="fa fa-sign-in ml-1" name="submit">SUBMIT</button>
+
+
       </div>
 
     </div>
