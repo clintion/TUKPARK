@@ -1,5 +1,7 @@
 ADMIN 
 
+<body style="background-image: url('/TUKPARK/img/slot2.jpg') ">
+
 <div style="width:500px; margin:0px auto; border: 1px #CCC solid; margin-top:15%">
             <form action="?index.php" method="post" target="_top" style="margin-bottom:0px;">
             <h3 style="color:#FFFFFF; background:#782F40; margin:0px 0px 20px 0px; padding:5px 0px 5px 10px"> TUPARK ADMIN LOGIN</h3>
@@ -32,3 +34,4 @@ ADMIN
             <p style="border-top:1px solid #d6d8e5; background:#782F40; margin:0px; padding:5px 10px 5px 0px; text-align:right"><input type="submit" name="sblogin" value="SIGN-IN" class="massterbutton"/></p>
           	</form>
     </div>
+</body>
