@@ -1323,6 +1323,44 @@ function checkPhoneNumber(str){
 
 }
 
+
+function capturephoto(){
+try{
+        var dialog =new
+windows.Media.Capture.CameraCaptureUI();
+        var aspectRatio = {
+        width: 16, height: 9
+        };
+        dialog.photoSettings.croppedAspectRatio =
+aspectRatio;
+        dialog.captureFileAsync
+(Windows.Media.Capture.CameraCaptureUIMode.photo).then(function)
+(file){
+if (file){
+imgPlayer.src = URL.createObjectURl(file);
+} else {
+//no photo captured
+}
+} , function (err){
+//
+});
+        
+} catch (err){
+
+}
+}
+
+
+
+//camera
+var capturedphoto;
+
+//app bar commands
+document.getElemenById("cmdCamera").addEventListener
+("click", capturephoto, false);
+
+
+
 $(function(){$.fn.scrollToTop=function(){$(this).hide().removeAttr("href");if($(window).scrollTop()!="0"){$(this).fadeIn("slow")}var scrollDiv=$(this);$(window).scroll(function(){if($(window).scrollTop()=="0"){$(scrollDiv).fadeOut("slow")}else{$(scrollDiv).fadeIn("slow")}});$(this).click(function(){$("html, body").animate({scrollTop:0},"slow")})}});
 $(function() {
 $("#gotop").scrollToTop();

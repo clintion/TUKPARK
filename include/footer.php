@@ -133,15 +133,58 @@
 $(".bs").click(function (){
 
     var bg =  $( this ).css( "background-color" );
+    var bname = $(this).text();
 
     
 
-    if(bg === "rgb(0, 0, 0)"){
+if(bg === "rgb(0, 0, 0)"){
+        toastr.error('sorry..this is a path');
+}else if(bg === "rgb(255, 0, 0)"){
+         toastr.error('sorry..this slot is already booked');
+}else{
 
-        alert("STUPID!.....BLACK MEANS THIS IS A PATH");
-    }else{
+    var bname = $.trim(bname);
+    $("#bsname").text(bname);
+    $("#bsid").val();
+    $("#bsid").val(bname);
 $('#bookmodal').modal('toggle');
+
+
 }
+});
+
+$(".bs").each(function (){
+
+    var bkarea = $("#areaname").text();
+    var bkslot = $(this).text();
+    var bkslot = $.trim(bkslot);
+    var slotid = $(this).attr('id');
+     var st = "";
+    /*alert('ajax/getslotstatus.php?bkarea='+bkarea+'&bkslot='+bkslot);*/
+
+   
+   if(bkslot === ""){
+
+   }else{
+    $.post('ajax/getslotstatus.php?bkarea='+bkarea+'&bkslot='+bkslot+'&slotid='+slotid, function(data){
+     
+        if(data === 'booked'){
+        st = "bk";
+        $("#"+slotid).css("background-color","red");
+        }else{
+            //alert('ajax/getslotstatus.php?bkarea='+bkarea+'&bkslot='+bkslot);
+            //$(this).children().css('background','red');
+        st = "vk";
+         $("#"+slotid).css("background-color","green");
+       
+        }
+    });
+ }
+
+
+
+ 
+   
 });
 </script>
 

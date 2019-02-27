@@ -3,6 +3,8 @@
 
 if (isset($_POST['submit'])) {
     $plateno =$_POST['plateno'];
+    $bkslot =$_POST['bsid'];
+    $bkarea = "CENTRAL CAR PARK";
     $timein =$_POST['timein'];
     $timeout =$_POST['timeout'];
 
@@ -11,8 +13,17 @@ if (isset($_POST['submit'])) {
     if($con->connect_error){ 
         die('connection_failed - '.$con->connect_error);
     }else {
-        $con->query("INSERT INTO `eh`.`userbook` (`plateno`, `timein`, `timeout`, `createdat`, `updatedat`) VALUES ('$plateno', '$timein', '$timeout', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)");
+        $con->query("INSERT INTO `eh`.`userbook` (`plateno`, `bkarea`, `bkslot`,`timein`, `timeout`, `createdat`, `updatedat`) VALUES ('$plateno','$bkarea','$bkslot','$timein', '$timeout', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)");
     }
+    ?><!-- 
+
+<script type="text/javascript">
+  alert("<?php echo $query ?>");
+</script> -->
+
+
+
+    <?php
 
 
 }
@@ -738,7 +749,12 @@ padding-top:10px;
       <!--Body-->
       <div class="modal-body text-center mb-1">
 
-        <h5 class="mt-1 mb-2">BOOK SLOT </h5>
+        <h5 class="mt-1 mb-2">BOOK <span id="bsname"></span></h5>
+
+
+        <form action="" method="post" id="bkform" name="bkform" class="needs-validation">
+
+        <input type="hidden" id="bsid" name="bsid">
 
         <div class="md-form">
                 <input type="text" id="materialRegisterFormPhone" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock" required name="plateno">
@@ -760,8 +776,7 @@ padding-top:10px;
         </div>
  -->
  <button class="btn " type="submit" style="background-color: #782F40 !important;" class="fa fa-sign-in ml-1" name="submit">SUBMIT</button>
-
-
+</form>
       </div>
 
     </div>
@@ -775,117 +790,121 @@ padding-top:10px;
   <div class="container">
 
       <h5 class="h5 pt-4">
-                <strong>CENTRAL CAR PARK</strong>
+                <strong id="areaname">CENTRAL CAR PARK</strong>
      </h5>
 
    <div class="row py-2 px-2 pt-1">
+   <?php  
 
 
-     <div class="col-2 bs center font-weight-bold">
+    ?>
+
+
+     <div class="col-2 bs center font-weight-bold" id="1">
        SLOT 1
      </div>
-     <div class="col-2 bs center font-weight-bold" style="background-color:black !important;border:none !important;">
+     <div class="col-2 bs center font-weight-bold"  style="background-color:black !important;border:none !important;">
      
      </div>
-     <div class="col-2 bs center font-weight-bold">
-      SLOT 3
+     <div class="col-2 bs center font-weight-bold" id="6" >
+      SLOT 6
      </div>
 
-      <div class="col-2 bs center font-weight-bold">
-       SLOT 4
+      <div class="col-2 bs center font-weight-bold" id="11">
+       SLOT 11
      </div>
-     <div class="col-2 bs center font-weight-bold" style="background-color:black !important;border:none !important;">
+     <div class="col-2 bs center font-weight-bold"  style="background-color:black !important;border:none !important;">
       
      </div>
-     <div class="col-2 bs center font-weight-bold">
-       SLOT 6
+     <div class="col-2 bs center font-weight-bold" id="16" >
+       SLOT 16
      </div>
 
 
 
 
- <div class="col-2 bs center font-weight-bold">
-       SLOT 1
+ <div class="col-2 bs center font-weight-bold" id="2">
+       SLOT 2
      </div>
-     <div class="col-2 bs center font-weight-bold" style="background-color:black !important;border:none !important;">
+     <div class="col-2 bs center font-weight-bold" id="2" style="background-color:black !important;border:none !important;">
      
      </div>
-     <div class="col-2 bs center font-weight-bold">
-      SLOT 3
+     <div class="col-2 bs center font-weight-bold" id="7">
+      SLOT 7
      </div>
 
-      <div class="col-2 bs center font-weight-bold">
-       SLOT 4
+      <div class="col-2 bs center font-weight-bold" id="12">
+       SLOT 12
      </div>
-     <div class="col-2 bs center font-weight-bold" style="background-color:black !important;border:none !important;">
+     <div class="col-2 bs center font-weight-bold" id="12" style="background-color:black !important;border:none !important;">
       
      </div>
-     <div class="col-2 bs center font-weight-bold">
-       SLOT 6
+     <div class="col-2 bs center font-weight-bold" id="17" >
+       SLOT 17
      </div>
 
 
 
-      <div class="col-2 bs center font-weight-bold">
-       SLOT 1
+      <div class="col-2 bs center font-weight-bold" id="3">
+       SLOT 3
      </div>
-     <div class="col-2 bs center font-weight-bold" style="background-color:black !important;border:none !important;">
+     <div class="col-2 bs center font-weight-bold" id="3" style="background-color:black !important;border:none !important;">
      
      </div>
-     <div class="col-2 bs center font-weight-bold">
-      SLOT 3
+     <div class="col-2 bs center font-weight-bold" id="8" >
+      SLOT 8
      </div>
 
-      <div class="col-2 bs center font-weight-bold">
-       SLOT 4
+      <div class="col-2 bs center font-weight-bold" id="13" >
+       SLOT 13
      </div>
      <div class="col-2 bs center font-weight-bold" style="background-color:black !important;border:none !important;">
     
      </div>
-     <div class="col-2 bs center font-weight-bold">
-       SLOT 6
+     <div class="col-2 bs center font-weight-bold" id="18" >
+       SLOT 18
      </div>
 
 
-      <div class="col-2 bs center font-weight-bold">
-       SLOT 1
+      <div class="col-2 bs center font-weight-bold" id="4">
+       SLOT 4
      </div>
-     <div class="col-2 bs center font-weight-bold" style="background-color:black !important;border:none !important;">
+     <div class="col-2 bs center font-weight-bold" id="4" style="background-color:black !important;border:none !important;">
        
      </div>
-     <div class="col-2 bs center font-weight-bold">
-      SLOT 3
+     <div class="col-2 bs center font-weight-bold" id="9" >
+      SLOT 9
      </div>
 
-      <div class="col-2 bs center font-weight-bold">
-       SLOT 4
+      <div class="col-2 bs center font-weight-bold" id="14">
+       SLOT 14
+     </div>
+     <div class="col-2 bs center font-weight-bold" id="14" style="background-color:black !important;border:none !important;">
+      
+     </div>
+     <div class="col-2 bs center font-weight-bold" id="19" >
+       SLOT 19
+     </div>
+
+
+      <div class="col-2 bs center font-weight-bold" id="5" >
+       SLOT 5
      </div>
      <div class="col-2 bs center font-weight-bold" style="background-color:black !important;border:none !important;">
       
      </div>
-     <div class="col-2 bs center font-weight-bold">
-       SLOT 6
+     <div class="col-2 bs center font-weight-bold" id="10" >
+      SLOT 10
      </div>
 
-
-      <div class="col-2 bs center font-weight-bold">
-       SLOT 1
-     </div>
-     <div class="col-2 bs center font-weight-bold" style="background-color:black !important;border:none !important;">
-      
-     </div>
-     <div class="col-2 bs center font-weight-bold">
-      SLOT 3
-     </div>
-
-      <div class="col-2 bs center font-weight-bold">
-       SLOT 4
+      <div class="col-2 bs center font-weight-bold" id="15" >
+       SLOT 15
      </div>
      <div class="col-2 bs center font-weight-bold" style="background-color:black !important;border:none !important;">
      
      </div>
-     <div class="col-2 bs center font-weight-bold">
-       SLOT 6
+     <div class="col-2 bs center font-weight-bold" id="20" >
+       SLOT 20
      </div>
 
 

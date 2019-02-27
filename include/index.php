@@ -131,5 +131,10 @@ $(".button-collapse").sideNav();
 var sideNavScrollbar = document.querySelector('.custom-scrollbar');
 Ps.initialize(sideNavScrollbar);
                    </script>
+
+<button id="cmdCamera" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmdCamera',label:'user photo',icon:'camera',section:'global',tooltip:'change user photo'}">
+    
+  </button>
+                   
 </body>
 </html>
