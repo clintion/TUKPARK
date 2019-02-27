@@ -751,21 +751,21 @@ padding-top:10px;
    <div class="container">
 
       <h5 class="h5 pt-2">
-                <strong>Eng BLOCK</strong>
+                <strong>ENGINEERING BLOCK</strong>
      </h5>
 
    <div class="row py-2 px-2 pt-1">
-     <div class="col-4 bs center font-weight-bold">
+     <div class="col-4 bs center font-weight-bold" id="32">
        SLOT 1
      </div>
-     <div class="col-4 bs center font-weight-bold">
+     <div class="col-4 bs center font-weight-bold" id="33">
        SLOT 2
      </div>
 
      <!-- Force next columns to break to new line at md breakpoint and up -->
     
 
-     <div class="col-4 col-sm-4 bs center font-weight-bold">
+     <div class="col-4 col-sm-4 bs center font-weight-bold" id="34">
       SLOT 3
      </div>
 
@@ -773,17 +773,17 @@ padding-top:10px;
       
      </div>
 
-      <div class="col-4 bs center font-weight-bold">
+      <div class="col-4 bs center font-weight-bold" id="35">
        SLOT 4
      </div>
-     <div class="col-4 bs center font-weight-bold">
+     <div class="col-4 bs center font-weight-bold" id="36">
        SLOT 5
      </div>
 
      <!-- Force next columns to break to new line at md breakpoint and up -->
     
 
-     <div class="col-4 col-sm-4 bs center font-weight-bold">
+     <div class="col-4 col-sm-4 bs center font-weight-bold" id="37">
       SLOT 6
      </div>
    </div>

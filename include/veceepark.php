@@ -755,37 +755,37 @@ padding-top:10px;
      </h5>
 
    <div class="row py-2 px-2 pt-1">
-     <div class="col-4 bs center font-weight-bold">
+     <div class="col-4 bs center font-weight-bold" id="38">
        SLOT 1
      </div>
      <div class="col-4 bs center font-weight-bold" style="background-color:black !important;border:none !important;">
       
      </div>
 
-     <div class="col-4 col-sm-4 bs center font-weight-bold">
-      SLOT 3
+     <div class="col-4 col-sm-4 bs center font-weight-bold" id="39">
+      SLOT 4
      </div>
 
-      <div class="col-4 bs center font-weight-bold">
-       SLOT 4
+      <div class="col-4 bs center font-weight-bold" id="40">
+       SLOT 2
      </div>
      <div class="col-4 bs center font-weight-bold" style="background-color:black !important;border:none !important;">
      
      </div>
 
-     <div class="col-4 col-sm-4 bs center font-weight-bold">
-      SLOT 6
+     <div class="col-4 col-sm-4 bs center font-weight-bold" id="41">
+      SLOT 5
      </div>
 
-     <div class="col-4 col-sm-4 bs center font-weight-bold">
-      SLOT 6
+     <div class="col-4 col-sm-4 bs center font-weight-bold" id="42">
+      SLOT 3
      </div>
 
      <div class="col-4 col-sm-4 bs center font-weight-bold" style="background-color:black !important;border:none !important;">
      
      </div>
 
-     <div class="col-4 col-sm-4 bs center font-weight-bold">
+     <div class="col-4 col-sm-4 bs center font-weight-bold" id="43">
       SLOT 6
      </div>
    </div>
