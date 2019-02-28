@@ -61,7 +61,7 @@ if (isset($_POST['login'])) {
 
       <!-- Password -->
       <div class="md-form">
-        <input type="password" id="materialLoginFormPassword" class="form-control" required name="password">
+        <input type="password" id="materialLoginFormPassword" class="form-control" required name="password" >
         <label for="materialLoginFormPassword">Password</label>
       </div>
 

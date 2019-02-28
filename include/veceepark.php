@@ -1,3 +1,34 @@
+
+
+<?php 
+
+
+if (isset($_POST['submit'])) {
+    $plateno =$_POST['plateno'];
+    $bkslot =$_POST['bsid'];
+    $bkarea = "VICEE AREA PARK";
+    $timein =$_POST['timein'];
+    $timeout =$_POST['timeout'];
+
+
+    $con = new mysqli('localhost','root','','eh');
+    if($con->connect_error){ 
+        die('connection_failed - '.$con->connect_error);
+    }else {
+        $con->query("INSERT INTO `eh`.`userbook` (`plateno`, `bkarea`, `bkslot`,`timein`, `timeout`, `createdat`, `updatedat`) VALUES ('$plateno','$bkarea','$bkslot','$timein', '$timeout', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)");
+    }
+    ?>
+
+
+    <?php
+
+
+}
+?>
+
+
+
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <a href="#" id="gotop"><img src='./img/gotop.png' style='border:0px;'/></a>
 <title>TuPark car parking V.C area Parking</title>
@@ -718,25 +749,30 @@ padding-top:10px;
       <!--Body-->
       <div class="modal-body text-center mb-1">
 
-        <h5 class="mt-1 mb-2">BOOK SLOT 3</h5>
+        <h5 class="mt-1 mb-2">BOOK <span id="bsname"></span></h5>
 
-        <div class="md-form ml-0 mr-0">
-          <input type="password" type="text" id="form29" class="form-control form-control-sm validate ml-0" required>
-          <label data-error="wrong" data-success="right" for="form29" class="ml-0">CAR NO. PLATE</label>
-        </div>
+        <form action="" method="post" id="bkform" name="bkform" class="needs-validation">
+
+        <input type="hidden" id="bsid" name="bsid">
+
+        <div class="md-form">
+                <input type="text" id="materialRegisterFormPhone" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock" required name="plateno">
+                <label for="materialRegisterFormPhone">CAR NO. PLATE</label>
+            </div>
          <div class="md-form">
             TIME IN
-         <input placeholder="Time Out" type="time" id="input_starttime" class="input_starttime" required>
-         <label for="input_starttime"></label>
+         <input placeholder="Time Out" type="time" id="input_starttime" class="input_starttime" required name="timein">
+         <label for="timein"></label>
          </div>
          <div class="md-form">
             TIME OUT
-         <input placeholder="Time Out" type="time" id="input_starttime" class="input_starttime">
-         <label for="input_starttime"></label>
+         <input placeholder="Time Out" type="time" id="input_starttime" class="input_starttime" required name="timeout">
+         <label for="timeout"></label>
          </div>
 
         <div class="text-center mt-4">
-          <button class="btn  mt-1" type="submit" style="background-color: #782F40 !important;">DONE <i class="fa fa-sign-in ml-1"></i></button>
+          <button class="btn  mt-1" name="submit" type="submit" style="background-color: #782F40 !important;">DONE <i class="fa fa-sign-in ml-1"></i></button>
+      </form>
         </div>
       </div>
 
@@ -751,33 +787,33 @@ padding-top:10px;
       <div class="container">
 
       <h5 class="h5 pt-2">
-                <strong>VC AREA BLOCK</strong>
+                <strong id="areaname">VICEE AREA PARK</strong>
      </h5>
 
    <div class="row py-2 px-2 pt-1">
-     <div class="col-4 bs center font-weight-bold" id="38">
+     <div class="col-4 bs center font-weight-bold" id="1">
        SLOT 1
      </div>
      <div class="col-4 bs center font-weight-bold" style="background-color:black !important;border:none !important;">
       
      </div>
 
-     <div class="col-4 col-sm-4 bs center font-weight-bold" id="39">
+     <div class="col-4 col-sm-4 bs center font-weight-bold" id="4">
       SLOT 4
      </div>
 
-      <div class="col-4 bs center font-weight-bold" id="40">
+      <div class="col-4 bs center font-weight-bold" id="2">
        SLOT 2
      </div>
      <div class="col-4 bs center font-weight-bold" style="background-color:black !important;border:none !important;">
      
      </div>
 
-     <div class="col-4 col-sm-4 bs center font-weight-bold" id="41">
+     <div class="col-4 col-sm-4 bs center font-weight-bold" id="5">
       SLOT 5
      </div>
 
-     <div class="col-4 col-sm-4 bs center font-weight-bold" id="42">
+     <div class="col-4 col-sm-4 bs center font-weight-bold" id="3">
       SLOT 3
      </div>
 
@@ -785,7 +821,7 @@ padding-top:10px;
      
      </div>
 
-     <div class="col-4 col-sm-4 bs center font-weight-bold" id="43">
+     <div class="col-4 col-sm-4 bs center font-weight-bold" id="6">
       SLOT 6
      </div>
    </div>
@@ -829,12 +865,12 @@ padding-top:10px;
 </style> 
 
 
-<script>
+<!-- <script>
 $('#input_starttime').pickatime({
     // 12 or 24 hour
     twelvehour: true,
 });
-</script>
+</script> -->
 
 <script>
  
@@ -843,7 +879,7 @@ $('#input_starttime').pickatime({
 </script>
 
 
-<script>
+<!-- <script>
 $(".bs").click(function (){
 
     var bg =  $( this ).css( "background-color" );
@@ -857,4 +893,4 @@ $(".bs").click(function (){
 $('#bookmodal').modal('toggle');
 }
 });
-</script>
+</script> -->
