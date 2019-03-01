@@ -118,6 +118,8 @@ if (isset($_POST['submit'])) {
         $con->query("INSERT INTO `eh`.`tuparkusers` (`fname`, `lastname`, `noplate`, `license`, `phone`, `email`, `password`, `tuparkid`, `createdat`, `updatedat`) VALUES ('$fname', '$lastname', '$noplate', '$license', '$phone', '$email', '$password', '', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)");
     }
 
+
+
     # code...
 }
 ?>

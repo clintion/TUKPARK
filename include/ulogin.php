@@ -16,6 +16,7 @@ if (isset($_POST['login'])) {
           while ($row = $dt->fetch_assoc()) {
            $status = "signed in as - ".
            $row['license'];
+           echo "<script> window.location.assign('?'); </script>";
           }
         }else{
           $status = "wrong details";
