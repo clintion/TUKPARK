@@ -7,7 +7,7 @@
         <div class="row">
 
             <!--First column-->
-            <div class="col-lg-4 col-md-4 ">
+            <div class="col-lg-4 col-md -4 ">
                 <h5 class="text-uppercase mb-4 mt-3 font-weight-bold text-white">TuPark</h5>
                 <p>Your partner to help you find a parking slot JUST WHEN YOU NEED IT!</p>
             </div>

@@ -115,7 +115,7 @@ if (isset($_POST['submit'])) {
     if($con->connect_error){ 
         die('connection_failed - '.$con->connect_error);
     }else {
-        $con->query("INSERT INTO `eh`.`tuparkusers` (`fname`, `lastname`, `noplate`, `license`, `phone`, `email`, `password`, `tuparkid`, `createdat`, `updatedat`) VALUES ('$fname', '$lastname', '$noplate', '$license', '$phone', '$email', '$password', '', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)");
+    $con->query("INSERT INTO `eh`.`tuparkusers` (`fname`, `lastname`, `noplate`, `license`, `phone`, `email`, `password`, `tuparkid`, `createdat`, `updatedat`) VALUES ('$fname', '$lastname', '$noplate', '$license', '$phone', '$email', '$password', '', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)");
     }
 
 

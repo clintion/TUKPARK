@@ -13,10 +13,26 @@ if (isset($_POST['login'])) {
     }else {
         $dt = $con-> query("SELECT * FROM tuparkusers WHERE email='$email' and password='$password'  "); 
         if($dt->num_rows >0){
+
           while ($row = $dt->fetch_assoc()) {
-           $status = "signed in as - ".
-           $row['email'];
-          }
+           /*$status = "signed in as - ".
+           $row['email'];*/
+
+           $_SESSION['email'] = $row['email'];
+           $_SESSION['password'] = $row['password'];
+
+           }
+           ?>
+
+           <script type="text/javascript">
+          window.location.href= "adminpage.php";
+          </script>
+
+
+
+
+           <?php
+          
         }else{
           $status = "wrong details !";
         }

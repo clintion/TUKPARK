@@ -246,16 +246,40 @@ bottom:0;
             
                 	<li>&nbsp;&nbsp;</li>	
                   
-                  
+                 
+                 <?php
+                 if($_GET['page'] == 'home' || $_GET['page'] == '' ){
+
+
+                 }else{?>
                         
-                <li   class="nav-item"  style="color: white !important;border:none !important;float:left !important;">  <a href="?" class="nav-link" style="color: white !important;"><i class="fa fa-th" aria-hidden="true"></i> HOME </a> </li>                             
-             		
-           
-                  	 			      
-      
-  
-                                                   
-                                <li class="nav-item"  style="color: white !important;border:none !important;">
+                <li   class="nav-item"  style="color: white !important;border:none !important;float:left !important;">  <a href="?" class="nav-link" style="color: white !important;"><i class="fa fa-th" aria-hidden="true"></i> HOME </a> </li> 
+                <?php } ?>
+
+                <?php                            
+                if(isset($_SESSION['id'])){
+                ?>
+                <li class="nav-item"  style="color: white !important;border:none !important;">
+                <a class="nav-link" href="#" style="color: white !important;border:none !important;text-transform: uppercase;"> logged in as <?php
+                echo $_SESSION['fname']; ?></a>
+                </li>
+
+                <li class="nav-item"  style="color: white !important;border:none !important;">
+                <a class="nav-link" href="?page=logout" style="color: white !important;border:none !important;text-transform: uppercase;">log out</a>
+                </li>
+
+
+
+                <?php 
+              }else{
+
+                if(isset($_SESSION['id'])){
+
+                }else{
+                ?>
+
+
+                    <li class="nav-item"  style="color: white !important;border:none !important;">
                                 <a class="nav-link" href="?page=uregister" style="color: white !important;border:none !important;text-transform: uppercase;"><i class="fa fa-user-plus" aria-hidden="true"></i> REGISTER</a>
                                 </li>
                      
@@ -263,6 +287,7 @@ bottom:0;
                                  <a class="nav-link" href="?page=ulogin" style="color: white !important;border:none !important;text-transform: uppercase;" class="nav-link"><i class="fa fa-key" aria-hidden="true"></i> LOGIN </a></li>
                                
                                 <li class="nav-item"  style="color: white !important;">    <span  style="color:#125e9a;"></span><span style="color:#125e9a;"></span></li>
+                <?php }} ?>
                       
                         
                

@@ -13,11 +13,28 @@ if (isset($_POST['login'])) {
     }else {
         $dt = $con-> query("SELECT * FROM tuparkusers WHERE license='$license' and password='$password'  "); 
         if($dt->num_rows >0){
+
           while ($row = $dt->fetch_assoc()) {
-           $status = "signed in as - ".
-           $row['license'];
-           echo "<script> window.location.assign('?'); </script>";
+           $_SESSION['license'] = $row['license'];
+           $_SESSION['fname'] = $row['fname'];
+           $_SESSION['lname'] = $row['lastname'];
+           $_SESSION['noplate'] = $row['noplate'];
+           $_SESSION['email'] = $row['email'];
+           $_SESSION['phone'] = $row['email'];
+           $_SESSION['id'] = $row['tuparkid'];
           }
+          ?>
+
+          <script type="text/javascript">
+          window.location.href= "?";
+          </script>
+
+
+
+
+
+       <?php
+
         }else{
           $status = "wrong details";
         }
@@ -45,7 +62,7 @@ if (isset($_POST['login'])) {
   <div class=".col-12 .col-sm-6 .col-lg-8">
 
   <h5 class="card-header secondary-color yellow-text text-center py-4" style="background-color: #782F40 !important;">
-    <strong>Sign in <?php if(isset($status)){echo($status); }?> </strong>
+    <strong>Sign In</strong>
   </h5>
 
   <!--Card content-->
