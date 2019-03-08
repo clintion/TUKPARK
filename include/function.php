@@ -97,10 +97,14 @@ function GetURL()
 	}
 
 
+$regstat = 2;
+
+?>
 
 
 
-if (isset($_POST['submit'])) {
+<?php
+if (isset($_POST['submit'])){
     $fname =$_POST['fname'];
     $lastname =$_POST['lastname'];
     $noplate =$_POST['noplate'];
@@ -110,16 +114,50 @@ if (isset($_POST['submit'])) {
     $password =$_POST['password'];
 
 
+$con = new mysqli('localhost','root','','eh');
+    $dt = $con->query("SELECT * FROM tuparkusers WHERE license='$license' OR password='$password' OR email='$email'");
+        if($dt->num_rows >0){ 
+            $regstat = 1;
+?>
 
-    $con = new mysqli('localhost','root','','eh');
+
+<?php
+
+         }else{
+
+
+
+    
     if($con->connect_error){ 
         die('connection_failed - '.$con->connect_error);
     }else {
-    $con->query("INSERT INTO `eh`.`tuparkusers` (`fname`, `lastname`, `noplate`, `license`, `phone`, `email`, `password`, `tuparkid`, `createdat`, `updatedat`) VALUES ('$fname', '$lastname', '$noplate', '$license', '$phone', '$email', '$password', '', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)");
+        $con->query("INSERT INTO `eh`.`tuparkusers` (`fname`, `lastname`, `noplate`, `license`, `phone`, `email`, `password`, `tuparkid`, `createdat`, `updatedat`) VALUES ('$fname', '$lastname', '$noplate', '$license', '$phone', '$email', '$password', '', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)");
+
+        $dt = $con-> query("SELECT * FROM tuparkusers WHERE license='$license' and password='$password'  "); 
+        if($dt->num_rows >0){
+
+          while ($row = $dt->fetch_assoc()) {
+           $_SESSION['license'] = $row['license'];
+           $_SESSION['fname'] = $row['fname'];
+           $_SESSION['lname'] = $row['lastname'];
+           $_SESSION['noplate'] = $row['noplate'];
+           $_SESSION['email'] = $row['email'];
+           $_SESSION['phone'] = $row['email'];
+           $_SESSION['id'] = $row['tuparkid'];
+          }
+          ?>
+
+          <script type="text/javascript">
+          window.location.href= "?";
+          </script>
+
+
+
+
+        <?php
+    }
     }
 
-
-
     # code...
-}
+}}
 ?>

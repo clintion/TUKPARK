@@ -19,11 +19,17 @@
 <div class="card mx-8 z-depth-0" id="regcard">
 
     <h5 class="card-header  yellow-text text-center py-4 " style="background-color: #782F40 !important;">
-        <strong>Sign up <?php if(isset($fname)){echo $fname; }?></strong>
+        <strong>Sign Up</strong>
     </h5>
+
+
 
     <!--Card content-->
     <div class="card-body px-lg-5 pt-0 mx-0 px-0 " style="background-color: #782F40 !important;">
+
+        <div id="regerror22" style="background-color: red; color: white; font-weight: bold; width: 100% !important;<?php if($regstat == 1 ){ echo "display: block;"; }else{ echo "display: none;";  } ?> /*display: none;*/ "> 
+        USER ALREADY EXISTS
+    </div>
 
         <!-- Form -->
         <form class="text-center rounded card z-depth-2 px-3 py-2 mx-0 needs-validation" style="color: #757575; " method="POST" action="">
@@ -85,6 +91,7 @@
             <!-- Sign up button -->
             <button class="btn btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" style="background-color: #782F40 !important;" name="submit">SIGN UP</button>
 
+
             <!-- <hr> -->
 
  
@@ -92,6 +99,10 @@
         <!-- Form -->
 
     </div>
+
+
+
+
 
 </div>
 <!-- Material form register

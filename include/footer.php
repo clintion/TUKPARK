@@ -129,29 +129,9 @@
 
 
 
+
 <script>
-$(".bs").click(function (){
 
-    var bg =  $( this ).css( "background-color" );
-    var bname = $(this).text();
-
-    
-
-if(bg === "rgb(0, 0, 0)"){
-        toastr.error('sorry..this is a path');
-}else if(bg === "rgb(255, 0, 0)"){
-         toastr.error('sorry..this slot is already booked');
-}else{
-
-    var bname = $.trim(bname);
-    $("#bsname").text(bname);
-    $("#bsid").val();
-    $("#bsid").val(bname);
-$('#bookmodal').modal('toggle');
-
-
-}
-});
 
 $(".bs").each(function (){
 
@@ -187,6 +167,49 @@ $(".bs").each(function (){
    
 });
 </script>
+<?php 
+if(isset($_SESSION['id'])){
+?>
+<script type="text/javascript">
+$(".bs").click(function (){
 
-                 
+    var bg =  $( this ).css( "background-color" );
+    var bname = $(this).text();
+
+    
+
+if(bg === "rgb(0, 0, 0)"){
+        toastr.error('sorry..this is a path');
+}else if(bg === "rgb(255, 0, 0)"){
+         toastr.error('sorry..this slot is already booked');
+}else{
+
+    var bname = $.trim(bname);
+    $("#bsname").text(bname);
+    $("#bsid").val();
+    $("#bsid").val(bname);
+$('#bookmodal').modal('toggle');
+
+
+}
+});
+</script>
+
+
+
+    <?php 
+ }else{
+    ?>
+<script type="text/javascript">
+$(".bs").click(function (){
+alert("PLEASE LOGIN FIRST");
+});
+</script>
+<?php
+}
+?>
+
+
+
+    ?>             
 
