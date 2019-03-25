@@ -1,3 +1,8 @@
+<BR/>
+
+<button type="button" class="btn btn-danger">RED - SLOT IS OCCUPIED</button> <BR/> 
+<button type="button" class="btn btn-success">GREEN - SLOT IS VACANT</button>
+
 <?php 
 
 
@@ -912,13 +917,33 @@ padding-top:10px;
 
 
    </div>
+<!-- <div style="width:100% !important;padding-left:90% !important; height: 100% !important;">
+   <div style="height: 100px !important; width: 100px !important; background-color: blue;margin-right: 10px !important; ">
+
+  <button type="button" class="btn btn-danger">SLOT IS OCCUPIED</button> <BR/> 
+  <button type="button" class="btn btn-success">SLOT IS VACANT</button>
 </div>
+</div> -->
+
+</div>
+<!-- <br/>
+<br/>
+<br/>
+<br/>
+<button type="button" class="btn btn-danger">SLOT IS OCCUPIED</button> <BR/> 
+<button type="button" class="btn btn-success">SLOT IS VACANT</button> -->
+
+
         <!--/Projects section v.2-->
         <hr>
+        
+
     <!--/.Main layout-->
     
     </div>
-
+    <!-- <button type="button" class="btn btn-danger">RED - SLOT IS OCCUPIED</button> <BR/> 
+<button type="button" class="btn btn-success">GREEN - SLOT IS VACANT</button>
+ -->
 <!-- <script>
 $(".bs").click(function (){
 

@@ -47,10 +47,10 @@
                                    <div class="text-center col-lg-4  col-md-4 text-white">
              <ul class="list-unstyled list-inline mb-0">
             <li class="list-inline-item">
-                <h5 class="mb-1">Let us help </h5>
+                <h5 class="text-uppercase mb-4 mt-3 font-weight-bold text-white">TuPark</h5>
             </li>
             <li class="list-inline-item">
-                <a href="#!" class="btn btn-danger btn-rounded">BOOK A SLOT !</a>
+                <a href="?"  class="btn btn-danger btn-rounded">BOOK A SLOT !</a>
             </li>
         </ul>
         </div> 
@@ -59,16 +59,16 @@
                                 <?php
                                 }else{
                                 ?>
-             <!--  <div class="text-center col-lg-4  col-md-4 text-white">
+              <div class="text-center col-lg-4  col-md-4 text-white">
              <ul class="list-unstyled list-inline mb-0">
             <li class="list-inline-item">
-                <h5 class="mb-1">Register for free</h5>
+                <h5 class="text-uppercase mb-4 mt-3 font-weight-bold text-white">TuPark</h5>
             </li>
             <li class="list-inline-item">
-                <a href="#!" class="btn btn-danger btn-rounded">Sign up!</a>
+                <a href="index.php?page=uregister" class="btn btn-danger btn-rounded">Sign up!</a>
             </li>
         </ul>
-        </div> -->
+        </div>
         <?php } ?>
 
           
@@ -202,7 +202,7 @@ $('#bookmodal').modal('toggle');
     ?>
 <script type="text/javascript">
 $(".bs").click(function (){
-alert("PLEASE LOGIN FIRST");
+toastr.error('PLEASE LOGIN FIRST');
 });
 </script>
 <?php
@@ -211,5 +211,5 @@ alert("PLEASE LOGIN FIRST");
 
 
 
-    ?>             
+                
 

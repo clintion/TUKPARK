@@ -1,4 +1,7 @@
+<BR/>
 
+<button type="button" class="btn btn-danger">RED - SLOT IS OCCUPIED</button> <BR/> 
+<button type="button" class="btn btn-success">GREEN - SLOT IS VACANT</button>
 
 <?php 
 

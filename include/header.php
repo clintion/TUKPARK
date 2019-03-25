@@ -1,4 +1,14 @@
+<?php 
 
+
+require_once ('AfricasTalkingGateway.php');
+
+// Set your app credentials
+$username   = "sandbox";
+$apikey     = "enter your API key here";
+
+
+?> 
 <style>
 .md-pills{
 border:0px !important;
